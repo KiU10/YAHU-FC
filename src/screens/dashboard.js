@@ -1,4 +1,6 @@
 
+import { renderSquad } from "./squad.js";
+
 export function renderDashboard(app, career) {
     app.innerHTML = `
         <header class="topbar">
@@ -7,14 +9,17 @@ export function renderDashboard(app, career) {
         </header>
 
         <main class="dashboard">
-            <p class="eyebrow">MANAGER CAREER / SEASON 2026-27</p>
-            <h1>WELCOME BACK,<br><span>${career.manager}</span></h1>
+            <p class="eyebrow">
+                MANAGER CAREER / SEASON ${career.season}
+            </p>
+
+            <h1>WELCOME BACK,<br><span>${career.manager.replace(/[&<>"']/g, "")}</span></h1>
 
             <section class="club-banner">
                 <div>
                     <p class="eyebrow">YOUR CLUB</p>
                     <h2>${career.club}</h2>
-                    <p>Season 2026/27 · Professional</p>
+                    <p>Season ${career.season} · ${career.difficulty}</p>
                 </div>
                 <div class="club-rating">01</div>
             </section>
@@ -49,7 +54,13 @@ export function renderDashboard(app, career) {
 
     app.querySelectorAll("[data-page]").forEach(button => {
         button.addEventListener("click", () => {
-            alert(button.dataset.page.toUpperCase() + " coming soon!");
+            const page = button.dataset.page;
+
+            if (page === "squad") {
+                renderSquad(app, career);
+            } else {
+                alert(page.toUpperCase() + " coming soon!");
+            }
         });
     });
 }
