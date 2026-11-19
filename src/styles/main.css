@@ -1,241 +1,140 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.squad-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 30px 0;
 }
 
-body {
-    background: #101827;
-    color: white;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
+.squad-summary div {
+    background: #19263a;
+    border: 1px solid #30415b;
+    padding: 22px;
+    border-radius: 6px;
 }
 
-.topbar {
-    height: 85px;
-    padding: 0 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #263449;
+.squad-summary span,
+.squad-summary strong {
+    display: block;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-.logo span {
-    color: #54d69b;
-}
-
-.version, footer {
+.squad-summary span {
     color: #8292a9;
     font-size: 11px;
     letter-spacing: 2px;
 }
 
-.hero {
-    min-height: calc(100vh - 135px);
-    display: flex;
-    align-items: center;
-    padding: 7%;
-    background:
-        linear-gradient(90deg, #101827 25%, #101827dd 65%, #10182788),
-        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1600")
-        center/cover;
-}
-
-.hero-content {
-    max-width: 600px;
-}
-
-.eyebrow {
-    color: #54d69b;
-    font-size: 12px;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-}
-
-h1 {
-    font-size: clamp(55px, 9vw, 105px);
-    line-height: .95;
-    font-weight: 900;
-    letter-spacing: -4px;
-}
-
-h1 span {
-    color: #54d69b;
-}
-
-.description {
-    color: #a5b1c2;
-    margin: 28px 0;
-    line-height: 1.7;
-}
-
-button {
-    display: block;
-    width: 260px;
-    padding: 18px 22px;
-    margin-bottom: 12px;
-    background: #54d69b;
-    border: none;
-    color: #101827;
-    font-weight: 900;
-    cursor: pointer;
-    text-align: left;
-}
-
-button span {
-    float: right;
-}
-
-button.secondary {
-    background: transparent;
-    border: 1px solid #506078;
-    color: white;
-}
-
-button:hover {
-    opacity: .85;
-}
-
-footer {
-    padding: 20px 7%;
-}
-
-footer span {
-    float: right;
-}
-
-.career-setup {
-    max-width: 850px;
-    margin: 70px auto;
-    padding: 30px;
-}
-
-.career-setup h1 {
-    margin-bottom: 35px;
-}
-
-.setup-panel {
-    background: #19263a;
-    border: 1px solid #30415b;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-.setup-panel h2 {
-    font-size: 15px;
-    letter-spacing: 2px;
-    margin: 25px 0 18px;
-}
-
-.setup-panel h2:first-child {
-    margin-top: 0;
-}
-
-.setup-panel label {
-    display: block;
-    color: #a5b1c2;
-    font-size: 13px;
-    margin: 15px 0 8px;
-}
-
-.setup-panel input,
-.setup-panel select {
-    width: 100%;
-    padding: 15px;
-    background: #101827;
-    border: 1px solid #40516a;
-    color: white;
-    border-radius: 4px;
-}
-
-.setup-panel button {
-    margin-top: 30px;
-    width: 100%;
-}
-
-.back-button {
-    width: auto;
-    margin: 0;
-    background: transparent;
-    color: white;
-    border: 1px solid #40516a;
-}
-
-.dashboard {
-    max-width: 1150px;
-    margin: 65px auto;
-    padding: 25px;
-}
-
-.dashboard h1 {
-    margin: 25px 0 35px;
-}
-
-.club-banner {
-    background: linear-gradient(110deg, #263c55, #18263a);
-    border: 1px solid #40516a;
-    padding: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-.club-banner h2 {
+.squad-summary strong {
     font-size: 30px;
-    margin: 12px 0;
+    margin-top: 10px;
 }
 
-.club-banner p:last-child {
-    color: #a5b1c2;
+.section-heading {
+    margin: 35px 0 18px;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
-.club-rating {
-    font-size: 65px;
-    font-weight: 900;
-    color: #54d69b;
+.football-pitch {
+    position: relative;
+    background: repeating-linear-gradient(
+        0deg,
+        #246b48,
+        #246b48 75px,
+        #287750 75px,
+        #287750 150px
+    );
+    border: 3px solid #d4e6d8;
+    border-radius: 5px;
+    padding: 30px 10px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
 }
 
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+.pitch-lines {
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 1px;
+    background: #ffffff80;
 }
 
-.dashboard-card {
-    width: 100%;
-    min-height: 160px;
-    padding: 25px;
-    background: #19263a;
+.pitch-lines::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border: 1px solid #ffffff80;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pitch-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    gap: 5px;
+}
+
+.pitch-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: white;
-    border: 1px solid #30415b;
-    border-radius: 6px;
-    text-align: left;
+    min-width: 0;
+    text-shadow: 0 1px 3px #000;
 }
 
-.dashboard-card span {
-    color: #54d69b;
+.player-shirt {
+    background: #54d69b;
+    color: #101827;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    text-shadow: none;
+    border: 2px solid white;
+}
+
+.player-rating {
     font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
 }
 
-.dashboard-card h2 {
-    margin: 18px 0 8px;
+.pitch-player strong {
+    font-size: 12px;
+    margin-top: 5px;
 }
 
-.dashboard-card p {
-    color: #a5b1c2;
+.pitch-player small {
+    font-size: 10px;
+    color: #d5eadc;
 }
 
 @media (max-width: 600px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
+    .squad-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .football-pitch {
+        min-height: 500px;
+    }
+
+    .pitch-player strong {
+        font-size: 10px;
+    }
+
+    .player-shirt {
+        width: 32px;
+        height: 32px;
     }
 }
