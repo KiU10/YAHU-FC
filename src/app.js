@@ -1,4 +1,6 @@
 
+import { renderNewCareer } from "./screens/new-career.js";
+
 const app = document.getElementById("app");
 
 app.innerHTML = `
@@ -12,29 +14,20 @@ app.innerHTML = `
             <p class="eyebrow">YOUR STORY STARTS HERE</p>
             <h1>BUILD YOUR<br><span>LEGACY.</span></h1>
             <p class="description">
-                Take control. Build your squad.
-                Make history.
+                Take control. Build your squad. Make history.
             </p>
-
-            <button id="new-career">
-                NEW CAREER <span>→</span>
-            </button>
-
+            <button id="new-career">NEW CAREER →</button>
             <button id="load-career" class="secondary">
                 LOAD CAREER
             </button>
         </div>
     </main>
-
-    <footer>
-        YAHU FC <span>© 2026</span>
-    </footer>
 `;
 
-document.getElementById("new-career").addEventListener("click", () => {
-    alert("Your career begins soon...");
-});
+document.getElementById("new-career").onclick = () => {
+    renderNewCareer(app);
+};
 
-document.getElementById("load-career").addEventListener("click", () => {
+document.getElementById("load-career").onclick = () => {
     alert("No saved careers found.");
-});
+};
