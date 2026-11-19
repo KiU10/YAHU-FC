@@ -110,3 +110,60 @@ footer {
 footer span {
     float: right;
 }
+
+.career-setup {
+    max-width: 850px;
+    margin: 70px auto;
+    padding: 30px;
+}
+
+.career-setup h1 {
+    margin-bottom: 35px;
+}
+
+.setup-panel {
+    background: #19263a;
+    border: 1px solid #30415b;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.setup-panel h2 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin: 25px 0 18px;
+}
+
+.setup-panel h2:first-child {
+    margin-top: 0;
+}
+
+.setup-panel label {
+    display: block;
+    color: #a5b1c2;
+    font-size: 13px;
+    margin: 15px 0 8px;
+}
+
+.setup-panel input,
+.setup-panel select {
+    width: 100%;
+    padding: 15px;
+    background: #101827;
+    border: 1px solid #40516a;
+    color: white;
+    border-radius: 4px;
+}
+
+.setup-panel button {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.back-button {
+    width: auto;
+    margin: 0;
+    background: transparent;
+    color: white;
+    border: 1px solid #40516a;
+}
