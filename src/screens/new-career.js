@@ -1,4 +1,4 @@
-
+import { renderDashboard } from "./dashboard.js";
 export function renderNewCareer(app) {
     app.innerHTML = `
         <header class="topbar">
