@@ -1,0 +1,112 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #101827;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 85px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #263449;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #54d69b;
+}
+
+.version, footer {
+    color: #8292a9;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.hero {
+    min-height: calc(100vh - 135px);
+    display: flex;
+    align-items: center;
+    padding: 7%;
+    background:
+        linear-gradient(90deg, #101827 25%, #101827dd 65%, #10182788),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1600")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.eyebrow {
+    color: #54d69b;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(55px, 9vw, 105px);
+    line-height: .95;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+h1 span {
+    color: #54d69b;
+}
+
+.description {
+    color: #a5b1c2;
+    margin: 28px 0;
+    line-height: 1.7;
+}
+
+button {
+    display: block;
+    width: 260px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    background: #54d69b;
+    border: none;
+    color: #101827;
+    font-weight: 900;
+    cursor: pointer;
+    text-align: left;
+}
+
+button span {
+    float: right;
+}
+
+button.secondary {
+    background: transparent;
+    border: 1px solid #506078;
+    color: white;
+}
+
+button:hover {
+    opacity: .85;
+}
+
+footer {
+    padding: 20px 7%;
+}
+
+footer span {
+    float: right;
+}
