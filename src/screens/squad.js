@@ -1,19 +1,10 @@
+
+import { clubs } from "../data/clubs.js";
 import { renderDashboard } from "./dashboard.js";
-const players = [
-    { name: "Manuel Neuer", position: "GK", rating: 86, age: 40, line: 0 },
-    { name: "Alphonso Davies", position: "LB", rating: 84, age: 25, line: 1 },
-    { name: "Dayot Upamecano", position: "CB", rating: 85, age: 27, line: 1 },
-    { name: "Jonathan Tah", position: "CB", rating: 86, age: 30, line: 1 },
-    { name: "Joshua Kimmich", position: "RB", rating: 89, age: 31, line: 1 },
-    { name: "Tom Bischof", position: "CM", rating: 78, age: 21, line: 2 },
-    { name: "Aleksandar Pavlovic", position: "CM", rating: 83, age: 22, line: 2 },
-    { name: "Jamal Musiala", position: "CAM", rating: 90, age: 23, line: 2 },
-    { name: "Luis Díaz", position: "LW", rating: 87, age: 29, line: 3 },
-    { name: "Harry Kane", position: "ST", rating: 91, age: 33, line: 3 },
-    { name: "Michael Olise", position: "RW", rating: 88, age: 24, line: 3 }
-];
 
 export function renderSquad(app, career) {
+    const players = clubs[career.club] || clubs["FC Bayern München"];
+
     const average = Math.round(
         players.reduce((sum, player) => sum + player.rating, 0) / players.length
     );
