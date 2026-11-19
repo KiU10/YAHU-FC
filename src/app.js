@@ -1,5 +1,6 @@
 
 import { renderNewCareer } from "./screens/new-career.js";
+import { renderDashboard } from "./screens/dashboard.js";
 
 const app = document.getElementById("app");
 
@@ -14,14 +15,19 @@ app.innerHTML = `
             <p class="eyebrow">YOUR STORY STARTS HERE</p>
             <h1>BUILD YOUR<br><span>LEGACY.</span></h1>
             <p class="description">
-                Take control. Build your squad. Make history.
+                Take control. Build your squad.
+                Make history.
             </p>
-            <button id="new-career">NEW CAREER →</button>
+            <button id="new-career">
+                NEW CAREER <span>→</span>
+            </button>
             <button id="load-career" class="secondary">
                 LOAD CAREER
             </button>
         </div>
     </main>
+
+    <footer>YAHU FC <span>© 2026</span></footer>
 `;
 
 document.getElementById("new-career").onclick = () => {
@@ -29,5 +35,12 @@ document.getElementById("new-career").onclick = () => {
 };
 
 document.getElementById("load-career").onclick = () => {
-    alert("No saved careers found.");
+    const savedCareer = localStorage.getItem("yahuCareer");
+
+    if (!savedCareer) {
+        alert("No saved career found.");
+        return;
+    }
+
+    renderDashboard(app, JSON.parse(savedCareer));
 };
