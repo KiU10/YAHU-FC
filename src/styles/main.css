@@ -167,3 +167,75 @@ footer span {
     color: white;
     border: 1px solid #40516a;
 }
+
+.dashboard {
+    max-width: 1150px;
+    margin: 65px auto;
+    padding: 25px;
+}
+
+.dashboard h1 {
+    margin: 25px 0 35px;
+}
+
+.club-banner {
+    background: linear-gradient(110deg, #263c55, #18263a);
+    border: 1px solid #40516a;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.club-banner h2 {
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.club-banner p:last-child {
+    color: #a5b1c2;
+}
+
+.club-rating {
+    font-size: 65px;
+    font-weight: 900;
+    color: #54d69b;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.dashboard-card {
+    width: 100%;
+    min-height: 160px;
+    padding: 25px;
+    background: #19263a;
+    color: white;
+    border: 1px solid #30415b;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.dashboard-card span {
+    color: #54d69b;
+    font-size: 12px;
+}
+
+.dashboard-card h2 {
+    margin: 18px 0 8px;
+}
+
+.dashboard-card p {
+    color: #a5b1c2;
+}
+
+@media (max-width: 600px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
