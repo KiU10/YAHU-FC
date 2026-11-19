@@ -1,4 +1,6 @@
+
 import { renderDashboard } from "./dashboard.js";
+
 export function renderNewCareer(app) {
     app.innerHTML = `
         <header class="topbar">
@@ -68,17 +70,17 @@ export function renderNewCareer(app) {
             return;
         }
 
-        const club = document.getElementById("club").value;
-        const difficulty = document.getElementById("difficulty").value;
+        const career = {
+            manager,
+            nationality: document.getElementById("nationality").value,
+            club: document.getElementById("club").value,
+            difficulty: document.getElementById("difficulty").value,
+            season: "2026/27"
+        };
 
-        app.innerHTML = `
-            <main class="career-setup">
-                <p class="eyebrow">CAREER CREATED</p>
-                <h1>WELCOME,<br><span>${manager.replace(/[&<>"']/g, "")}</span></h1>
-                <h2>${club}</h2>
-                <p>Difficulty: ${difficulty}</p>
-                <p>Your managerial journey starts now.</p>
-            </main>
-        `;
+        localStorage.setItem("yahuCareer", JSON.stringify(career));
+
+        renderDashboard(app, career);
     };
 }
+
